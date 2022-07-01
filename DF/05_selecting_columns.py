@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col
 
-spark = SparkSession.builder.appName('Providing schema').getOrCreate()
+spark = SparkSession.builder.appName('Selecting columns').getOrCreate()
 
 df = spark.read.options(inferSchema=True, header=True).csv('StudentData.csv')
 df.show()
