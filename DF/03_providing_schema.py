@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, IntegerType, StringType
 
-spark = SparkSession.builder.appName('Spark DataFrames').getOrCreate()
+spark = SparkSession.builder.appName('Providing schema').getOrCreate()
 
 df = spark.read.options(inferSchema=True, header=True).csv('StudentData.csv')
 df.show()
