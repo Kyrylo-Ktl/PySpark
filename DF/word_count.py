@@ -11,7 +11,7 @@ def split_sentence(sentence: str) -> list:
 
 
 spark = SparkSession.builder.appName('Word Count').getOrCreate()
-rows = spark.read.text('WordData.txt')
+rows = spark.read.text('data/WordData.txt')
 
 words = rows.withColumn('words', explode(split_sentence('value'))).select('words')
 word_count = words.groupBy('words').count().orderBy(col('count').desc())

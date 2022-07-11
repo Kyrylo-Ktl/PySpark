@@ -3,7 +3,7 @@ from pyspark.sql.functions import col
 
 spark = SparkSession.builder.appName('Renaming columns').getOrCreate()
 
-df = spark.read.options(inferSchema=True, header=True).csv('StudentData.csv')
+df = spark.read.options(inferSchema=True, header=True).csv('data/StudentData.csv')
 df.show()
 
 df = df.withColumnRenamed('gender', 'sex').withColumnRenamed('roll', 'roll number')

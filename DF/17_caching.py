@@ -15,7 +15,7 @@ def dummy_operation() -> int:
 
 spark = SparkSession.builder.appName('Caching').getOrCreate()
 
-df = spark.read.options(inferSchema=True, header=True).csv('StudentData.csv')
+df = spark.read.options(inferSchema=True, header=True).csv('data/StudentData.csv')
 df.show()
 
 df = df.withColumn('dummy', dummy_operation())

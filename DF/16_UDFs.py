@@ -13,7 +13,7 @@ def increment_salary(state: str, salary: int, bonus: int) -> float:
 
 spark = SparkSession.builder.appName('Spark UDFs').getOrCreate()
 
-df = spark.read.options(header='True', inferSchema='True').csv('OfficeData.csv')
+df = spark.read.options(header='True', inferSchema='True').csv('data/OfficeData.csv')
 df.show()
 
 df.withColumn("increment", increment_salary(df.state, df.salary, df.bonus)).show()

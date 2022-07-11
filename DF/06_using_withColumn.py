@@ -3,7 +3,7 @@ from pyspark.sql.functions import col, lit
 
 spark = SparkSession.builder.appName('Using withColumns').getOrCreate()
 
-df = spark.read.options(inferSchema=True, header=True).csv('StudentData.csv')
+df = spark.read.options(inferSchema=True, header=True).csv('data/StudentData.csv')
 df.show()
 
 df = df.withColumn('roll', col('roll').cast('String'))

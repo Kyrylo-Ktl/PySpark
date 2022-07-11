@@ -3,7 +3,7 @@ from pyspark.sql.functions import sum, avg, max, min, count, round
 
 spark = SparkSession.builder.appName('Grouping and aggregation').getOrCreate()
 
-df = spark.read.options(inferSchema=True, header=True).csv('StudentData.csv')
+df = spark.read.options(inferSchema=True, header=True).csv('data/StudentData.csv')
 df.show()
 
 df.groupBy('course').count().show()

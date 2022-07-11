@@ -13,7 +13,7 @@ spark = SparkSession.builder.appName('DF from RDD').getOrCreate()
 conf = SparkConf().setAppName('RDD')
 sc = SparkContext.getOrCreate(conf=conf)
 
-rdd = sc.textFile('StudentData.csv')
+rdd = sc.textFile('data/StudentData.csv')
 header = rdd.first()
 rdd = rdd.filter(lambda x: x != header).map(parse_row)
 
