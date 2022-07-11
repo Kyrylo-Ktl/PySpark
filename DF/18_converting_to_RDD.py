@@ -1,6 +1,6 @@
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder.appName('Grouping and filtering').getOrCreate()
+spark = SparkSession.builder.appName('Converting to RDD').getOrCreate()
 
 df = spark.read.options(inferSchema=True, header=True).csv('StudentData.csv')
 df.show()

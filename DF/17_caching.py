@@ -13,7 +13,7 @@ def dummy_operation() -> int:
     return randint(1, 1_000)
 
 
-spark = SparkSession.builder.appName('Grouping and aggregation').getOrCreate()
+spark = SparkSession.builder.appName('Caching').getOrCreate()
 
 df = spark.read.options(inferSchema=True, header=True).csv('StudentData.csv')
 df.show()
