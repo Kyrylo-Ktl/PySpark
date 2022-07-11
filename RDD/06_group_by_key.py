@@ -3,7 +3,7 @@ from pyspark import SparkConf, SparkContext
 conf = SparkConf().setAppName('Grouping by key')
 sc = SparkContext.getOrCreate(conf=conf)
 
-rows = sc.textFile('sample.txt')
+rows = sc.textFile('data/sample.txt')
 print(rows.collect())
 
 words = rows.flatMap(str.split).map(str.lower).map(lambda x: x.removesuffix('.'))

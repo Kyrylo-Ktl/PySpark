@@ -22,7 +22,7 @@ def calc_avg(row: tuple) -> tuple:
 conf = SparkConf().setAppName('Average')
 sc = SparkContext.getOrCreate(conf=conf)
 
-text = sc.textFile('StudentData.csv')
+text = sc.textFile('data/StudentData.csv')
 header = text.first()
 
 students = text.filter(lambda x: x != header).map(process_row)

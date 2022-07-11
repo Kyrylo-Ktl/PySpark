@@ -3,7 +3,7 @@ from pyspark import SparkConf, SparkContext
 conf = SparkConf().setAppName('Filtering')
 sc = SparkContext.getOrCreate(conf=conf)
 
-rows = sc.textFile('numbers.txt')
+rows = sc.textFile('data/numbers.txt')
 print(rows.collect())
 
 nums = rows.flatMap(str.split).map(int)

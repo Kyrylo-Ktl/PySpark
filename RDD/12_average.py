@@ -25,7 +25,7 @@ def calculate_avg(row: tuple) -> tuple:
 conf = SparkConf().setAppName('Average')
 sc = SparkContext.getOrCreate(conf=conf)
 
-rows = sc.textFile('movie_ratings.csv')
+rows = sc.textFile('data/movie_ratings.csv')
 
 movies = rows.map(parse_rows)
 print(movies.collect())
